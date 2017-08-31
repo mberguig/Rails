@@ -13,13 +13,9 @@ class ExpensesController < ApplicationController
   end
 
   def create
-       byebug
     @expense = Expense.new(expense_params)
     @expense.beneficiary_ids = expense_params[:beneficiary_ids]
     @expense.save
-    
-
- 
     redirect_to @expense
   end
 
@@ -29,7 +25,7 @@ class ExpensesController < ApplicationController
 
     redirect_to expenses_index_path
   end
-  
+
   private
 
   def expense_params
@@ -37,6 +33,6 @@ class ExpensesController < ApplicationController
   end
 
 
-  
+
 
 end

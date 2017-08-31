@@ -1,0 +1,15 @@
+<h1>Se connecter</h1>
+<%= form_with scope: :user, url:users_path, local: true do |form| %>
+  <p>
+    <%= form.label :nom %><br>
+    <%= form.text_field :nom %>
+  </p>
+ 
+  <p>
+    <%= form.label :mot %> de passe<br>
+    <%= form.text_field :mot %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

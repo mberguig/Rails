@@ -1,0 +1,30 @@
+<div class="container">
+
+<h1>Nouvelle dépense ajoutée :</h1>
+
+
+    <div class="row">
+        <p class="col-12">
+        <strong>Titre : </strong>
+        <%= @expense.title %>
+        </p>
+        
+        <p class="col-12">
+        <strong>Montant : </strong>
+        <%= @expense.amount %> €
+        </p>
+
+         <p class="col-12">
+        <strong>Payeur : </strong>
+        <%= @expense.payer.nom %>
+        </p>
+
+         <p class="col-12">
+        <strong>Beneficiaires : </strong>
+        <% @expense.beneficiaries.each do |beneficiary|%>
+            <%= beneficiary.nom %><br>
+        <%end%>
+        </p>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Toutes les dépenses :</h1>
+    <div class="row">
+        <table class="table">
+        <tr id="tabBar" class="text-align">
+            <th><p>Titre</p></th>
+            <th ><p>Montant</p></th>
+            <th ><p>Payeur</p></th>
+            <th ><p>Bénéficiaire</p></th>
+            <th ><p>Détails</p></th>
+            <th ><p>Supprimer</p></th>
+        </tr>
+        
+        <% @expenses.each do |expense| %>
+            <tr id="tabResults">
+                <td ><%= expense.title %></td>
+                <td ><%= expense.amount %></td>
+                <td ><%= expense.payer.nom %></td>
+                <td >voir</td>
+                <td><%= link_to 'Afficher', expense_path(expense) %></td>
+                <td><%= link_to 'Destroy', expense_path(expense), method: :delete, data: { confirm:'Are you sure ?' }%></td>
+            </tr>
+        <% end %>
+        </table>
+    </div>
+</div>
